@@ -2,15 +2,32 @@
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [projects, setProjects] = useState([]);
+ 
+  ✅ এই কোডটা বসাও:
 
-  useEffect(() => {
-    // এখানে তোমার কপি করা লিঙ্কের শেষে /api/projects অবশ্যই থাকবে
-    fetch('https://glorious-spoon-gxr9w54r7q4cvqr9-8000.app.github.dev/api/projects')
-      .then(res => res.json())
-      .then(data => setProjects(data))
-      .catch(err => console.log("Backend offline"));
-  }, []);
+  const projects = [
+    {
+      id: 1, 
+      title: "My First AI Project", 
+      tech: "FastAPI & Gemini",
+      link: "https://github.com/sunny/ai-project",
+      description: "এটি আমার প্রথম এআই প্রজেক্ট যা গুগল জেমিনি এপিআই ব্যবহার করে তৈরি করা হয়েছে।"
+    },
+    {
+      id: 2, 
+      title: "Portfolio Website", 
+      tech: "Next.js & Tailwind",
+      link: "https://github.com/sunny/portfolio",
+      description: "এটি একটি আধুনিক পোর্টফোলিও ওয়েবসাইট যা রিয়েক্ট এবং ফাস্টএপিআই দিয়ে তৈরি।"
+    },
+    {
+      id: 3, 
+      title: "SQA Automation Tool", 
+      tech: "Python & Selenium",
+      link: "https://github.com/sunny/sqa-tool",
+      description: "অটোমেশন টেস্টিংয়ের জন্য বানানো একটি শক্তিশালী টুল যা বাগ খুঁজে বের করে।"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-slate-900 text-white p-6 md:p-12 font-sans">
